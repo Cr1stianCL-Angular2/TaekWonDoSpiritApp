@@ -1,0 +1,105 @@
+<div class="wrapper">
+  <div class="section-dark backsite">
+    <div
+      class="page-header section-dark"
+      style="background-image: url('assets/img/antoine-barres.jpg')"
+    >
+      <div
+        class="moving-clouds"
+        style="background-image: url('assets/img/clouds.png'); "
+      ></div>
+      <div class="section landing-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mr-auto ml-auto">
+              <h2 class="text-center">Quieres Contactarnos?</h2>
+              <form class="contact-form">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Nombre</label>
+                    <div
+                      class="input-group"
+                      [ngClass]="{ 'input-group-focus': focus === true }"
+                    >
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"
+                          ><i class="nc-icon nc-single-02"></i
+                        ></span>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Nombre"
+                        (focus)="focus = true"
+                        (blur)="focus = false"
+                        [formControl]="name2"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Correo</label>
+                    <div
+                      class="input-group"
+                      [ngClass]="{ 'input-group-focus': focus1 === true }"
+                    >
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="nc-icon nc-email-85"></i
+                        ></span>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Correo"
+                        (focus)="focus1 = true"
+                        (blur)="focus1 = false"
+                        [formControl]="email2"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <label>Mensaje</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="Comentanos lo que necesitas..."
+                  [formControl]="message2"
+                  required
+                ></textarea>
+                <div class="row">
+                  <div class="col-md-6 mr-auto ml-auto text-center">
+                    <br />
+                    <re-captcha (resolved)="verificaRecaptchav2($event)">
+                    </re-captcha>
+                    <label for="">
+                      <span class="badge badge-warning" *ngIf="CapchaError"
+                        >{{ CapchaError }}
+                      </span>
+                    </label>
+
+                    <label for="">
+                      <span class="badge badge-success" *ngIf="MensajeEnviadoOK"
+                        >{{ MensajeEnviadoOK }}
+                      </span>
+                    </label>
+
+                    <button
+                      class="btn btn-danger btn-lg btn-fill"
+                      (click)="EnviarCorreo($event)"
+                      [disabled]="!validateRecaptchaOK"
+                    >
+                      Enviar
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div id="contactanosAnchor" #contactanosAnchorRef></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

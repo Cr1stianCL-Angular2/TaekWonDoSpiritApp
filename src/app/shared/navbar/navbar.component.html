@@ -1,0 +1,121 @@
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-transparent"
+  color-on-scroll="500"
+>
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" routerLink="home">TDK SPIRIT</a>
+      <button
+        class="navbar-toggler navbar-burger"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="sidebarToggle()"
+      >
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto" #stickyMenu [class.sticky]="sticky">
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a class="nav-link" routerLink="home">
+            <i class="nc-icon nc-check-2"></i>
+            Home</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a class="nav-link" routerLink="introduccion">
+            <i class="nc-icon nc-single-copy-04"></i>
+            Intro</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a href="" class="nav-link" routerLink="vision">
+            <i class="nc-icon nc-bulb-63"></i> Visión</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a href="" class="nav-link" routerLink="experiencias">
+            <i class="nc-icon nc-briefcase-24"></i> Acerca de</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a href="" class="nav-link" routerLink="graduaciones">
+            <i class="nc-icon nc-hat-3"></i> Graduaciones</a
+          >
+        </li>
+        <!--
+                    <li class="nav-item" *ngIf="!isDocumentation()">
+                        <a href="" class="nav-link" target="_blank"><i class="nc-icon nc-paper"></i> Certificaciones</a>
+                    </li>
+                    -->
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a href="" class="nav-link" routerLink="galeria"
+            ><i class="nc-icon nc-layout-11"></i>Galeria</a
+          >
+        </li>
+        <!--
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="Follow us on Twitter"
+            data-placement="bottom"
+            href="#"
+            target="_blank"
+          >
+            <i class="fa fa-twitter"></i>
+            <p class="d-lg-none">Twitter</p>
+          </a>
+        </li>
+        -->
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="Like us on Facebook"
+            data-placement="bottom"
+            href="https://www.facebook.com/instructorguillermo.farias"
+            target="_blank"
+          >
+            <i class="fa fa-facebook-square"></i>
+            <p class="d-lg-none">Facebook</p>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!isDocumentation()">
+          <a
+            class="nav-link"
+            rel="tooltip"
+            title="Follow us on Instagram"
+            data-placement="bottom"
+            href="https://www.instagram.com/clasesdetaekwondo/"
+            target="_blank"
+          >
+            <i class="fa fa-instagram"></i>
+            <p class="d-lg-none">Instagram</p>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isHome()">
+          <a
+            class="btn btn-danger btn-round"
+            [ngx-scroll-to]="'#contactanosAnchor'"
+            [ngx-scroll-to-offset]="1200"
+            >Contactanos</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!isHome()">
+          <a class="btn btn-danger btn-round" routerLink="contactanos"
+            >Contactanos</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
